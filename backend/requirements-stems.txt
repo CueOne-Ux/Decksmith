@@ -1,0 +1,6 @@
+# Kept separate from the application backend because PyTorch and Demucs are large,
+# optional, platform-specific runtime dependencies.
+numpy==1.26.4
+torch==2.2.2
+demucs==4.1.0
+backports.tarfile==1.2.0

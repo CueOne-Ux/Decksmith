@@ -1,0 +1,17 @@
+[build-system]
+requires = ["setuptools>=75"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "decksmith-core"
+version = "0.1.0"
+description = "Local library and audio analysis services for Decksmith"
+requires-python = ">=3.11"
+dependencies = ["mutagen>=1.47,<2"]
+
+[project.scripts]
+decksmith = "decksmith.cli:main"
+
+[tool.setuptools.packages.find]
+where = ["."]
+include = ["decksmith*"]

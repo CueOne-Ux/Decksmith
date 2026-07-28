@@ -1,0 +1,30 @@
+{
+  "name": "decksmith",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "desktop": "PATH=/Users/djcue1/.cargo/bin:$PATH tauri dev",
+    "runtime:build": "sh scripts/build-backend-runtime.sh",
+    "desktop:build": "npm run runtime:build && PATH=/Users/djcue1/.cargo/bin:$PATH tauri build && ditto src-tauri/target/release/bundle/macos/Decksmith.app release/Decksmith.app && codesign --verify --deep --strict release/Decksmith.app",
+    "desktop:clean": "sh scripts/clean-build-artifacts.sh"
+  },
+  "dependencies": {
+    "@phosphor-icons/react": "^2.1.10",
+    "@tauri-apps/api": "^2.11.1",
+    "@tauri-apps/plugin-dialog": "^2.7.1",
+    "react": "^19.1.0",
+    "react-dom": "^19.1.0",
+    "vite": "^7.0.4"
+  },
+  "devDependencies": {
+    "@tauri-apps/cli": "^2.11.4",
+    "@types/react": "^19.1.8",
+    "@types/react-dom": "^19.1.6",
+    "@vitejs/plugin-react": "^4.6.0",
+    "typescript": "~5.8.3"
+  }
+}
